@@ -1,77 +1,21 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/johnloy/vite-ts-react)
+# Coding Challenges
 
-# React + TypeScript + Vite
+1. Implement the logic to fetch [/repositories.json](./public/repositories.json) in the `fetchRandomRepos` util function. Throw an error in the case of a non-successful HTTP status.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. Type the return value of `fetchRandomRepos`, knowing that the following properties of a repo will be used in the app.
+    - `id`
+    - `full_name`
+    - `html_url`
+    - `description` (might be `null`)
 
-Currently, two official plugins are available:
+3. Implement a React hook that fetches 5 random repos and then prepends one additional repo to the returned `repos` value every 5 seconds. If an error occurs during fetching, it should be included in the return value of the hook.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+4. Test the error handling of the hook to ensure the error message renders properly. Style it to be 2/3 the width of its container and horizontally centered.
 
-## React Compiler
+5. Extract the repos list rendering into a separate React component named `ReposList`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+6. Style the repos list to left-align text, and also to be 2/3 the width of its container and horizontally centered. Style each list item to only occupy one line of text, truncated with an ellipsis.
 
-## Expanding the ESLint configuration
+7. Update the "Shuffle Order" button to shuffle the repos list.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+8. Toggle the checkbox of some list items, identify the bug, and fix it.

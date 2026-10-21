@@ -106,16 +106,14 @@ code {
   width: 100%;
   padding-inline: 2rem;
 
+  /* Challenge #6: Style the list of repositories */
   ul {
     list-style: none;
     padding-left: 0;
-    text-align: left;
   }
 
   li {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    /* https://developer.mozilla.org/en-US/search?q=ellipsis */
   }
 
   [role="alert"] {
@@ -150,6 +148,5 @@ code {
 }
 
 .two-thirds {
-  margin-inline: auto;
-  width: calc(100% * 2 / 3);
+  /* Challenge #4: Center the two-thirds width container */
 }
